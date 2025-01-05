@@ -22,8 +22,8 @@ function App() {
     return (
         <>
             <div>
-                <p>Nome a ser re-renderizado pelo navegador após o React atualizar o seu estado, recriar o VDOM, e
-                    aplicar o que mudou nele ao DOM:</p>
+                <p>Nome a ser re-renderizado pelo navegador após o React atualizar o estado da variável, criar outra versão do VDOM, comparar com a versão anterior, e
+                    aplicar as mudanças ao DOM:</p>
                 <button onClick={changeName}>{nameButtonContent}:</button>
                 {name}
                 <p>Nome atualizado sem ser pelo React:</p>
@@ -46,7 +46,7 @@ function App() {
                 <button
                     onClick={
                         () => {
-                            setShowNames(!showNames)
+                            setShowNames(!showNames);
                         }
                     }
                 >
