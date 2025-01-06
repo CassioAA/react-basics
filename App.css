@@ -1,8 +1,0 @@
-* {
-    margin: 20px;
-    font-size: larger;
-}
-
-div:not(:first-child) {
-    margin-top: 80px;
-}
