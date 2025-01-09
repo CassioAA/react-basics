@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState, useRef } from 'react'
 import './App.css'
 
 function App() {
@@ -19,6 +19,12 @@ function App() {
 
     const [showNames, setShowNames] = useState(false);
 
+    const input = useRef(null);
+    function changeInput() {
+        input.current.value = "";
+        setRepeatedUserInput("");
+    }
+
     return (
         <>
             <div>
@@ -32,6 +38,7 @@ function App() {
             </div>
             <div>
                 <input
+                    ref={input}
                     placeholder="Insira aqui um nome:"
                     onChange={
                         (event) => {
@@ -40,6 +47,9 @@ function App() {
                     }
                 />
                 {repeatedUserInput}
+                <button onClick={changeInput}>
+                    Clique aqui para limpar a caixa de texto acima
+                </button>
             </div>
             <div>
                 <p>Também mostrar, abaixo, os nomes?</p>
